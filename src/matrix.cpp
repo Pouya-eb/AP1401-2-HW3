@@ -199,3 +199,19 @@ Matrix Matrix::operator--(int)
     --(*this);
     return tmp;
 }
+bool Matrix::operator==(const Matrix& m2)
+{
+    if ((_row != m2._row) || (_column != m2._column))
+        return false;
+    for (size_t i {}; i < _row; i++)
+        for (size_t j {}; j < _column; j++)
+            if (matrix[i][j] != m2.matrix[i][j])
+                return false;
+    return true;
+}
+void Matrix::operator=(const Matrix& m2)
+{
+    for (size_t i {}; i < _row; i++)
+        for (size_t j {}; j < _column; j++)
+            matrix[i][j] = m2.matrix[i][j];
+}

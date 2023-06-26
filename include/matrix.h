@@ -40,6 +40,9 @@ public:
     Matrix operator--(int);
     // operator[]
     // operator<<
+    bool operator==(const Matrix&);
+    // operator<=>
+    void operator=(const Matrix&);
 
 private:
     // Member Variables

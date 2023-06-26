@@ -100,3 +100,23 @@ void Matrix::display() const
         std::cout << std::endl;
     }
 }
+size_t Matrix::getRowSize() const
+{
+    return _row;
+}
+size_t Matrix::getColSize() const
+{
+    return _column;
+}
+size_t Matrix::getRowCapacity() const
+{
+    return _rowcap;
+}
+size_t Matrix::getColCapacity() const
+{
+    return _colcap;
+}
+double** Matrix::getMatrix() const
+{
+    return matrix;
+}

@@ -21,6 +21,13 @@ public:
     const Matrix& append(const Matrix&, int axis = 0);
     void display() const;
 
+    // Getter Functions
+    size_t getRowSize() const;
+    size_t getColSize() const;
+    size_t getRowCapacity() const;
+    size_t getColCapacity() const;
+    double** getMatrix() const;
+
 private:
     // Member Variables
     size_t _row {};

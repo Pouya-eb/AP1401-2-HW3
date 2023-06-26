@@ -28,6 +28,11 @@ public:
     size_t getColCapacity() const;
     double** getMatrix() const;
 
+    // Operators
+    Matrix operator*(const Matrix&);
+    Matrix operator+(const Matrix&);
+
+
 private:
     // Member Variables
     size_t _row {};

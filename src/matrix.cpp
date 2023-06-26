@@ -120,3 +120,33 @@ double** Matrix::getMatrix() const
 {
     return matrix;
 }
+Matrix Matrix::operator*(const Matrix& m2)
+{
+    if (_column != m2._row) {
+        std::logic_error e { "Incompatible dimentions" };
+        throw e;
+    }
+    Matrix prod(_row, m2._column);
+    for (size_t i {}; i < _row; i++) {
+        for (size_t j {}; j < m2._column; j++) {
+            double sum {};
+            for (size_t k {}; k < _column; k++) {
+                sum += matrix[i][k] * m2.matrix[k][j];
+            }
+            prod.matrix[i][j] = sum;
+        }
+    }
+    return prod;
+}
+Matrix Matrix::operator+(const Matrix& m2)
+{
+    if ((_row != m2._row) || (_column != m2._column)) {
+        std::logic_error e { "Incompatible dimentions" };
+        throw e;
+    }
+    Matrix sum(_row, _column);
+    for (size_t i {}; i < _row; i++)
+        for (size_t j {}; j < _column; j++)
+            sum.matrix[i][j] = matrix[i][j] + m2.matrix[i][j];
+    return sum;
+}

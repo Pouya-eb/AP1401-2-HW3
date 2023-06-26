@@ -17,6 +17,9 @@ public:
     Matrix(const Matrix&);
     // ~Matrix() {};
 
+    // Member Functions
+    const Matrix& append(const Matrix&, int axis = 0);
+
 private:
     // Member Variables
     size_t _row {};

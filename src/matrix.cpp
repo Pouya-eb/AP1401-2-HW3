@@ -173,3 +173,16 @@ Matrix Matrix::operator-(const Matrix& m2)
             sum.matrix[i][j] = matrix[i][j] - m2.matrix[i][j];
     return sum;
 }
+const Matrix& Matrix::operator++()
+{
+    for (size_t i {}; i < _row; i++)
+        for (size_t j {}; j < _column; j++)
+            matrix[i][j] += 1;
+    return *this;
+}
+Matrix Matrix::operator++(int)
+{
+    Matrix tmp { *this };
+    ++(*this);
+    return tmp;
+}

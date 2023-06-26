@@ -34,6 +34,8 @@ public:
     Matrix& operator+=(Matrix);
     Matrix operator-(const Matrix&);
     // operator|
+    const Matrix& operator++();
+    Matrix operator++(int);
 
 private:
     // Member Variables

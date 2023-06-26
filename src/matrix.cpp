@@ -92,3 +92,11 @@ const Matrix& Matrix::append(const Matrix& m, int axis)
     matrix = tmp;
     return *this;
 }
+void Matrix::display() const
+{
+    for (size_t i {}; i < _row; i++) {
+        for (size_t j {}; j < _column; j++)
+            std::cout << std::setw(3) << matrix[i][j];
+        std::cout << std::endl;
+    }
+}

@@ -19,6 +19,7 @@ public:
 
     // Member Functions
     const Matrix& append(const Matrix&, int axis = 0);
+    void display() const;
 
 private:
     // Member Variables

@@ -150,3 +150,26 @@ Matrix Matrix::operator+(const Matrix& m2)
             sum.matrix[i][j] = matrix[i][j] + m2.matrix[i][j];
     return sum;
 }
+Matrix& Matrix::operator+=(Matrix m2)
+{
+    if ((_row != m2._row) || (_column != m2._column)) {
+        std::logic_error e { "Incompatible dimentions" };
+        throw e;
+    }
+    for (size_t i {}; i < _row; i++)
+        for (size_t j {}; j < _column; j++)
+            matrix[i][j] += m2.matrix[i][j];
+    return *this;
+}
+Matrix Matrix::operator-(const Matrix& m2)
+{
+    if ((_row != m2._row) || (_column != m2._column)) {
+        std::logic_error e { "Incompatible dimentions" };
+        throw e;
+    }
+    Matrix sum(_row, _column);
+    for (size_t i {}; i < _row; i++)
+        for (size_t j {}; j < _column; j++)
+            sum.matrix[i][j] = matrix[i][j] - m2.matrix[i][j];
+    return sum;
+}

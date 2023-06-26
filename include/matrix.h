@@ -36,6 +36,10 @@ public:
     // operator|
     const Matrix& operator++();
     Matrix operator++(int);
+    const Matrix& operator--();
+    Matrix operator--(int);
+    // operator[]
+    // operator<<
 
 private:
     // Member Variables
